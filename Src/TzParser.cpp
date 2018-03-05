@@ -436,7 +436,7 @@ TzTransitionList parseTimeZone(const char* tzName)
 		trans.time        = entry.time;
 		trans.utcOffset   = info.gmtOffset;
 		trans.isDst       = info.isDst;
-		trans.year        = gmTime->tm_year + 1900;
+		trans.year        = (gmTime?gmTime->tm_year:0) + 1900;
 		trans.abbrName[0] = 0;
 
 		int j = info.abbrIndex;
